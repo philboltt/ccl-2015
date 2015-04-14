@@ -183,32 +183,51 @@ function load_trc(url, callback) {
     if (trc!=undefined) {
         trc = {};
     }
-    $.getJSON(url, function(trcData) {
-        trcData.vertSamples = []
-        for (var i=0; i<trcData.samples.length; i++) {
-            var sample = trcData.samples[i].samples;
-            var vertices = []
-            for (var j=0; j<sample.length; j=j+3) {
-                var vert = new THREE.Vector3(
-                    sample[j]   * SCALE,
-                    sample[j+1] * SCALE,
-                    sample[j+2] * SCALE);
-                vertices.push(vert);
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        method: 'GET',
+        progress:  function(e) {
+        //make sure we can compute the length
+            if(e.lengthComputable) {
+                //calculate the percentage loaded
+                var pct = Math.floor((e.loaded / e.total) * 100);
+                $("#loadingProgress").attr({"aria-valuenow":pct});
+                $("#loadingProgress").css("width",pct+"%");
+                $("#loadingProgress").html(pct+"%");
             }
-            trcData.vertSamples.push(vertices);
-        }
-        trc.data = trcData;
-        var geometry = new THREE.Geometry();
-        geometry.vertices = trc.data.vertSamples[currentFrame];
-        var material = new THREE.PointCloudMaterial({size: 1});
-        trc.ptc = new THREE.PointCloud( geometry, material );
-        scene.add(trc.ptc);
+            //this usually happens when Content-Length isn't set
+            else {
+                console.warn('Content Length not reported!');
+            }
+        },
+        success: function(trcData) {
+            trcData.vertSamples = []
+            for (var i=0; i<trcData.samples.length; i++) {
+                var sample = trcData.samples[i].samples;
+                var vertices = []
+                for (var j=0; j<sample.length; j=j+3) {
+                    var vert = new THREE.Vector3(
+                        sample[j]   * SCALE,
+                        sample[j+1] * SCALE,
+                        sample[j+2] * SCALE);
+                    vertices.push(vert);
+                }
+                trcData.vertSamples.push(vertices);
+            }
+            trc.data = trcData;
+            var geometry = new THREE.Geometry();
+            geometry.vertices = trc.data.vertSamples[currentFrame];
+            var material = new THREE.PointCloudMaterial({size: 1});
+            trc.ptc = new THREE.PointCloud( geometry, material );
+            scene.add(trc.ptc);
 
-        interval = (1000.0 / trc.data.DataRate);
-        startTime = Date.now();
-        previousTime = Date.now();
-        $('#loadingModal').modal('hide');
-        callback();
+            interval = (1000.0 / trc.data.DataRate);
+            startTime = Date.now();
+            previousTime = Date.now();
+            $('#loadingModal').modal('hide');
+            callback();
+        } 
     });
 }
 
