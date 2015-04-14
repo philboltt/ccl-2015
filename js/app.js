@@ -175,6 +175,11 @@ function toggleSelection() {
 
 function load_trc(url, callback) {
     console.log("Reading ", url);
+    $("#loadingText").html(url);
+    $("#loadingModal").modal({
+        keyboard: false,
+        show: true
+    })
     if (trc!=undefined) {
         trc = {};
     }
@@ -202,12 +207,7 @@ function load_trc(url, callback) {
         interval = (1000.0 / trc.data.DataRate);
         startTime = Date.now();
         previousTime = Date.now();
-
-        $('#loadModal').modal({
-            keyboard: true,
-            show: false
-        })
-
+        $('#loadingModal').modal('hide');
         callback();
     });
 }
