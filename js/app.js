@@ -198,6 +198,10 @@ function load_trc(url, callback) {
             }
             //this usually happens when Content-Length isn't set
             else {
+                $("#loadingProgress").attr({"aria-valuenow":100});
+                $("#loadingProgress").addClass("active progress-bar-striped");
+                $("#loadingProgress").css("width","100%");
+                $("#loadingProgress").html("Please be patient...");
                 console.warn('Content Length not reported!');
             }
         },
