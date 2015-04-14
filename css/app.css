@@ -7774,159 +7774,16 @@ button.close {
 .fa-bomb:before {
   content: "\f1e2";
 }
-.navbar {
-  font-family: 'unica_oneregular', cursive;
-  font-size: 24px;
-  text-transform: uppercase;
+html,
+body {
+  height: 100%;
 }
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
-}
-.navbar-default .navbar-brand {
-  padding: 10px;
-}
-.navbar-default .navbar-brand img {
-  display: inline;
-}
-.navbar-default .navbar-nav li.dropdown.open a,
-.navbar-default .navbar-nav li.dropdown.open a:hover {
-  color: #f5974e;
-  padding-bottom: 30px;
-  border-bottom: 5px solid #f5974e;
-}
-.navbar-default .navbar-nav li.dropdown.open ul.dropdown-menu {
+body {
+  color: black;
   background-color: black;
+  font-family: Monospace;
+  font-weight: 100;
 }
-.navbar-default .navbar-nav li.dropdown.open ul.dropdown-menu li {
-  font-size: 18px;
+body p {
+  font-size: 1.2em;
 }
-.navbar-default .navbar-nav li.dropdown.open ul.dropdown-menu li a {
-  color: white;
-  background-color: black;
-  padding-bottom: 0px;
-  border: 0px;
-}
-.navbar-default .navbar-nav li.dropdown.open ul.dropdown-menu li a:hover,
-.navbar-default .navbar-nav li.dropdown.open ul.dropdown-menu li a:focus {
-  color: #f5974e;
-  background-color: black;
-}
-.navbar-default .navbar-nav li a:hover {
-  color: #f5974e;
-  display: inline-block;
-  padding-bottom: 30px;
-  border-bottom: 5px solid #f5974e;
-}
-.navbar-default .navbar-nav li a.sm-icons {
-  display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 21px;
-}
-.navbar-default .navbar-nav li a.sm-icons:hover {
-  border-bottom: 0;
-}
-.rodrigo-logo {
-  height: 65px;
-}
-@font-face {
-  font-family: 'unica_oneregular';
-  src: url('../fonts/unicaone-regular-webfont.eot');
-  src: url('../fonts/unicaone-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unicaone-regular-webfont.woff2') format('woff2'), url('../fonts/unicaone-regular-webfont.woff') format('woff'), url('../fonts/unicaone-regular-webfont.ttf') format('truetype'), url('../fonts/unicaone-regular-webfont.svg#unica_oneregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'dosisregular';
-  src: url('../fonts/dosis-regular-webfont.eot');
-  src: url('../fonts/dosis-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/dosis-regular-webfont.woff2') format('woff2'), url('../fonts/dosis-regular-webfont.woff') format('woff'), url('../fonts/dosis-regular-webfont.ttf') format('truetype'), url('../fonts/dosis-regular-webfont.svg#dosisregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-body,
-html {
-  text-align: center;
-  font-family: 'dosisregular', sans-serif;
-  background-color: #212538;
-  background-image: url(../img/escheresque_ste.png);
-  background-repeat: repeat;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'unica_oneregular', cursive;
-  text-transform: uppercase;
-}
-ul {
-  list-style-type: none;
-}
-.jumbotron {
-  color: #5E6D70;
-}
-.jumbotron img {
-  margin: 20px 0px 20px 0px;
-}
-.jumbotron .subtitle {
-  font-size: 1.5em;
-  padding: 0px 0px 20px 0px;
-}
-.row {
-  color: #5E6D70;
-  background-color: rgba(238, 238, 238, 0.7);
-}
-.row p {
-  font-size: 18px;
-}
-.row .alert-warning {
-  background-color: #C13B00;
-  color: white;
-}
-.row a {
-  color: #C13B00;
-}
-.row a:hover {
-  color: #FF6600;
-}
-.row table {
-  background-color: #eeeeee;
-}
-.row iframe {
-  margin: 20px 0px 20px 0px;
-}
-footer .rodrigo-logo {
-  margin-top: 10px;
-  float: left;
-}
-footer .contact {
-  padding-top: 10px;
-  font-family: 'unica_oneregular', cursive;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-footer .contact a {
-  color: white;
-}
-footer .contact a:hover {
-  color: white;
-  text-decoration: none;
-}
-footer .sm-icon {
-  height: 50px;
-}
-.rffooter {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-.rffooter .row {
-  background-color: black;
-}
-@media (max-width: 1200px) {
-  footer .rodrigo-logo {
-    float: none;
-    display: inline;
-  }
-}
-/* test  */
